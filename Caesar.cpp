@@ -3,10 +3,12 @@
 #include <iostream>
 #include <algorithm> 
 #include <cctype>
-
+#include <windows.h>
 
 std::string ConvertToCaesar(const std::string& input)
 {
+	SetConsoleOutputCP(1251);
+	SetConsoleCP(1251);
 	std::string r_alph = "àáâãäå¸æçèéêëìíîïğñòóôõö÷øùúûüışÿ";
 	std::string R_alph = "ÀÁÂÃÄÅ¨ÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜİŞß";
 	std::string e_alph = "abcdefghijklmnopqrstuvwxyz";

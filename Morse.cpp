@@ -1,9 +1,12 @@
 #include <string>
 #include <unordered_map>
 #include "Morse.h"
+#include <windows.h>
 
 std::string Morse(const std::string& input)
 {
+    SetConsoleOutputCP(1251);
+    SetConsoleCP(1251);
    static const std::unordered_map<char, std::string> Morse = {
        {'A', ".-"},    {'B', "-..."},  {'C', "-.-."},  {'D', "-.."},   {'E', "."},
        {'F', "..-."},  {'G', "--."},   {'H', "...."},  {'I', ".."},    {'J', ".---"},

@@ -2,9 +2,13 @@
 #include <string>
 #include <iostream>
 #include <unordered_map>
+#include <windows.h>
+
 
 std::string Atbash(const std::string& input)
 {
+    SetConsoleOutputCP(1251);
+    SetConsoleCP(1251);
 	static const std::unordered_map<char, char> Atbash = {
     {'A', 'Z'}, {'B', 'Y'}, {'C', 'X'}, {'D', 'W'}, {'E', 'V'},
     {'F', 'U'}, {'G', 'T'}, {'H', 'S'}, {'I', 'R'}, {'J', 'Q'},

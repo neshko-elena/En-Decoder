@@ -10,6 +10,7 @@
 #include "Vigenere.h"
 #include "Morse.h"
 #include "Atbash.h"
+#include "Binary.h"
 /*
 1) просто перевод англ клавы в рус и наоборот +
 2) шифр Цезаря +
@@ -26,8 +27,6 @@
 */
 int main()
 {
-    SetConsoleOutputCP(1251);
-    SetConsoleCP(1251);
     std::string text;
     std::string answ;
     bool y = 0;
@@ -55,7 +54,7 @@ int main()
         }
     }
     std::cout << "Confirmed the text: " << text << std::endl;
-    std::cout << "Please choose an option: " << std::endl << "1) Keyboard layout\n" << "2) Caesar cipher\n" << "3) Vigenere cipher\n4) Morse code\n5) Atbash cipher\n";
+    std::cout << "Please choose an option: " << std::endl << "1) Keyboard layout\n" << "2) Caesar cipher\n" << "3) Vigenere cipher\n4) Morse code\n5) Atbash cipher\n6) Binary\n";
     int optC;
     std::cin >> optC;
     switch (optC)
@@ -81,6 +80,9 @@ int main()
             break;
     case 5:
         std::cout << Atbash(text);
+        break;
+    case 6:
+        std::cout << Binary(text);
         break;
     }
     return 0;

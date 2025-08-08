@@ -1,11 +1,14 @@
 #include "keyboard_map.h"
 #include <unordered_map>
 #include <string>
+#include <windows.h>
 
 std::string ConvertToKL(const std::string& input)
 {
+    SetConsoleOutputCP(1251);
+    SetConsoleCP(1251);
     static const std::unordered_map<char, char> ConvertToKL = {
-                {'é', 'q'}, {'ö', 'w'}, {'ó', 'e'}, {'ê', 'r'}, {'å', 't'}, {'í', 'y'},
+        {'é', 'q'}, {'ö', 'w'}, {'ó', 'e'}, {'ê', 'r'}, {'å', 't'}, {'í', 'y'},
         {'ã', 'u'}, {'ø', 'i'}, {'ù', 'o'}, {'ç', 'p'}, {'õ', '['}, {'ú', ']'},
         {'ô', 'a'}, {'û', 's'}, {'â', 'd'}, {'à', 'f'}, {'ï', 'g'}, {'ð', 'h'},
         {'î', 'j'}, {'ë', 'k'}, {'ä', 'l'}, {'æ', ';'}, {'ý', '\''},
