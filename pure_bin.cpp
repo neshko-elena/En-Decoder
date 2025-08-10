@@ -1,16 +1,20 @@
 #include "pure_bin.h"
-#include <string>
 #include <bitset>
+#include <iostream>
 #include <vector>
 
-std::string pure_bin(const std::string& input)
+std::vector<long long> pure_bin(const std::string& input)
 {
-	std::string result;
+	setlocale(LC_ALL, "ru_RU.UTF-8");
+	std::vector<long long> result;
 	for (char c : input)
 	{
 		unsigned char uncp = static_cast<unsigned char>(c);
 		std::bitset<8> bits(uncp);
-		result += bits.to_string() + " ";
+		for (int i = 7; i >= 0; --i)
+		{
+			result.push_back(bits[i] ? 1 : 0);
+		}
 	}
 	return result;
 }
